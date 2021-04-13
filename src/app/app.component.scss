@@ -1,0 +1,25 @@
+@import '../styles.scss';
+
+.quote {
+  line-height: 37px;
+  max-width: 768px;
+  p {
+    display: flex;
+    text-align: center;
+    .mark-left,
+    .mark-right {
+      width: 173px;
+      height: 173px;
+      position: relative;
+    }
+
+    .mark-left {
+      top: -43px;
+      transform: rotate(180deg);
+    }
+
+    .mark-right {
+      top: -17px;
+    }
+  }
+}
