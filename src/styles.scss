@@ -5,12 +5,20 @@
 @import url("https://use.typekit.net/xcw2yqm.css");
 
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap');
-// variables
+
 $flavia-grey: #8E8E8E;
+
+@mixin font-aktiv-regular{
+  font-family: aktiv-grotesk, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 14px;
+}
 
 p {
   font-family: ivyjournal, sans-serif;
   font-weight: 300;
   font-style: normal;
 }
+
 
