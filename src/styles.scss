@@ -14,6 +14,10 @@ $flavia-grey: #8E8E8E;
   font-style: normal;
   font-size: 14px;
 }
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 p {
   font-family: ivyjournal, sans-serif;

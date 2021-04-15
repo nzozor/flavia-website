@@ -10,7 +10,7 @@ export class AppComponent implements AfterViewInit{
   header: any;
   sticky: any;
   tempPageYOffset: any;
-
+  isMobileMenuActive = false;
   @HostListener('window:scroll', ['$event'])
   private onWindowScroll(event: any): void {
       console.log(window.pageYOffset);
@@ -22,7 +22,7 @@ export class AppComponent implements AfterViewInit{
       } else {
         this.header.classList.remove('shrink');
       }
-      if (direction === 'down' && window.pageYOffset > 30) {
+      if (direction === 'down' && window.pageYOffset > 130) {
         this.header.classList.add('hide');
       } else {
         this.header.classList.remove('hide');
@@ -34,5 +34,9 @@ export class AppComponent implements AfterViewInit{
     this.header = document.getElementById('header');
     // Get the offset position of the navbar
     this.sticky = this.header.offsetTop;
+  }
+
+  public toggleMenu(): void {
+    this.isMobileMenuActive = !this.isMobileMenuActive;
   }
 }
