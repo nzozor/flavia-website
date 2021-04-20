@@ -1,8 +1,10 @@
-<header id="header" class="transition-all ease-in-out">
+<header id="header" class="transition-all ease-in-out px-10">
   <div class="container mx-auto flex flex-row justify-between 
     items-center transition-all delay-100 ease-in-out  py-8"> 
-    <span><img src="../assets/Flavia Logo.svg" alt="Flavia Frigeri"></span>
-    <nav class="flex flex-row space-x-4">
+  
+    <span><img src="../assets/Flavia-Logo.svg" alt="Flavia Frigeri" class="flavia-logo"></span>
+  
+    <nav class="flex-row space-x-4 hidden md:flex" >
       <a href="#">Home</a>
       <a href="#">About</a>
       <a href="#">Exibitions</a>
@@ -13,7 +15,7 @@
       <a href="#">News</a>
     </nav>
 
-    <div class="menu-icon tablet:hidden"  (click)="toggleMenu()" >
+    <div class="menu-icon md:hidden"  (click)="toggleMenu()" >
       <input class="menu-icon__cheeckbox" type="checkbox" />
       <div>
         <span></span>
@@ -23,7 +25,7 @@
 
     <div class="nav" [class.nav-active]="isMobileMenuActive" >
       <div class="nav__content">
-        <ul class="nav__list">
+        <ul class="nav__list flex flex-col laptop:flex-row ">
           <li class="nav__list-item">Home</li>
           <li class="nav__list-item">About</li>
           <li class="nav__list-item">Exibitions</li>
@@ -45,11 +47,11 @@
 
 <section class="py-24 mx-auto quote">
   <p>
-    <span> <img src="../assets/quote.svg" alt="" class="mark-left" /></span>
+    <!-- <span> <img src="../assets/quote.svg" alt="" class="mark-left" /></span> -->
     Flavia Frigeri is an art historian, curator, and teaching fellow at
     University College London. Frigeri is the author of Pop Art and Women
     Artists, both in Thames & Hudson’s Art Essentials series.
-    <span> <img src="../assets/quote.svg" alt="" class="mark-right" /></span>
+    <!-- <span> <img src="../assets/quote.svg" alt="" class="mark-right" /></span> -->
   </p>
 </section>
 
