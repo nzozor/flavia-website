@@ -1,6 +1,6 @@
-<header id="header" class="transition-all ease-in-out  duration-1000">
+<header id="header" class="transition-all ease-in-out">
   <div class="container mx-auto flex flex-row justify-between 
-    items-center transition-all delay-100 ease-in-out duration-800 py-8"> 
+    items-center transition-all delay-100 ease-in-out  py-8"> 
     <span><img src="../assets/Flavia Logo.svg" alt="Flavia Frigeri"></span>
     <nav class="flex flex-row space-x-4">
       <a href="#">Home</a>
@@ -13,7 +13,7 @@
       <a href="#">News</a>
     </nav>
 
-      <div class="menu-icon">
+      <div class="menu-icon"  (click)="toggleMenu()">
         <input class="menu-icon__cheeckbox" type="checkbox" />
         <div>
           <span></span>
@@ -22,16 +22,20 @@
       </div>
 
 
-    <!-- <div class="nav">
+    <div class="nav" [class.nav-active]="isMobileMenuActive">
       <div class="nav__content">
         <ul class="nav__list">
           <li class="nav__list-item">Home</li>
           <li class="nav__list-item">About</li>
-          <li class="nav__list-item">Projects</li>
-          <li class="nav__list-item">Contact</li>
+          <li class="nav__list-item">Exibitions</li>
+          <li class="nav__list-item">Books</li>
+          <li class="nav__list-item">Essays</li>
+          <li class="nav__list-item">Teaching</li>
+          <li class="nav__list-item">Talks</li>
+          <li class="nav__list-item">News</li>
         </ul>
       </div>
-    </div> -->
+    </div>
   </div>
 </header>
 <img

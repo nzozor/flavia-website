@@ -14,6 +14,28 @@ $flavia-grey: #8E8E8E;
   font-style: normal;
   font-size: 14px;
 }
+
+@mixin underline($color) {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    background: $color;
+    width: 0;
+    height: 1px;
+    top: 100%;
+    transform: translate(0%, 0%);
+    transition: all .3s ease;
+    z-index: -1;
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
