@@ -13,16 +13,15 @@
       <a href="#">News</a>
     </nav>
 
-      <div class="menu-icon"  (click)="toggleMenu()">
-        <input class="menu-icon__cheeckbox" type="checkbox" />
-        <div>
-          <span></span>
-          <span></span>
-        </div>
+    <div class="menu-icon tablet:hidden"  (click)="toggleMenu()" >
+      <input class="menu-icon__cheeckbox" type="checkbox" />
+      <div>
+        <span></span>
+        <span></span>
       </div>
+    </div>
 
-
-    <div class="nav" [class.nav-active]="isMobileMenuActive">
+    <div class="nav" [class.nav-active]="isMobileMenuActive" >
       <div class="nav__content">
         <ul class="nav__list">
           <li class="nav__list-item">Home</li>
