@@ -1,4 +1,6 @@
-import { AfterViewInit, Component, HostListener } from '@angular/core';
+import { AfterViewInit, Component, HostListener, Inject } from '@angular/core';
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'flavia-root',
@@ -6,12 +8,15 @@ import { AfterViewInit, Component, HostListener } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit{
+  constructor(@Inject(PLATFORM_ID) private platformId: {}) {}
+
   title = 'flavia-website';
   header: any;
   sticky: any;
   tempPageYOffset: any;
   isMobileMenuActive = false;
   @HostListener('window:scroll', ['$event'])
+
   private onWindowScroll(event: any): void {
       console.log(window.pageYOffset);
       const direction = window.pageYOffset > this.tempPageYOffset ? 'down' : 'up';
@@ -31,7 +36,7 @@ export class AppComponent implements AfterViewInit{
 
   public ngAfterViewInit(): void {
     // Get the header
-    if (document) {
+    if (isPlatformBrowser(this.platformId)) {
       this.header = document.getElementById('header');
       // Get the offset position of the navbar
       this.sticky = this.header.offsetTop;
