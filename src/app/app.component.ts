@@ -31,9 +31,11 @@ export class AppComponent implements AfterViewInit{
 
   public ngAfterViewInit(): void {
     // Get the header
-    this.header = document.getElementById('header');
-    // Get the offset position of the navbar
-    this.sticky = this.header.offsetTop;
+    if (document) {
+      this.header = document.getElementById('header');
+      // Get the offset position of the navbar
+      this.sticky = this.header.offsetTop;
+    }
   }
 
   public toggleMenu(): void {

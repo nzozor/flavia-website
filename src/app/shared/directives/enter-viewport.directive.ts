@@ -1,5 +1,7 @@
 import { AfterContentInit, Directive, ElementRef, EventEmitter,
-  HostBinding, Input, OnDestroy, OnInit, Output } from '@angular/core';
+  HostBinding, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+
 @Directive({
   selector: '[flaviaEnterViewport]'
 })
@@ -11,10 +13,12 @@ export class EnterViewportDirective  implements OnDestroy, OnInit, AfterContentI
   private observer: IntersectionObserver | undefined;
 
 
-  constructor(private element: ElementRef) {}
+  constructor(private element: ElementRef, @Inject(PLATFORM_ID) private plateformId: {}) {}
 
   ngOnInit(): void {
-    this.createObserver();
+    if (isPlatformBrowser(this.plateformId)) {
+      this.createObserver();
+    }
   }
 
   ngAfterContentInit(): void {
