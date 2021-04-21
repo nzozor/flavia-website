@@ -34,13 +34,11 @@ header {
       display: inline-block;
       width: 100%;
       @include underline(black);
+
     }
   }
 
   &.shrink {
-    >div {
-      @apply py-6;
-    }
 
     transition: all 0.6s ease-out;
 
@@ -146,7 +144,7 @@ header {
 
     &:before,
     &:after {
-      content: "\00a0";
+      content: "";
       position: fixed;
       top: 0;
       width: $width;
@@ -178,7 +176,10 @@ header {
     }
 
     &__list-item {
-      // display: inline-block;
+      @include font-aktiv-regular;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      margin-bottom: .7rem;
       transition-delay: $transition--length + s;
       opacity: 0;
       transform: translate(0%, 100%);
@@ -186,6 +187,9 @@ header {
       margin-right: 25px;
 
       @include underline(black);
+      @include breakpoint-less(md) {
+        margin-right: 0;
+      }
     }
 
     &.nav-active {
@@ -222,12 +226,12 @@ header {
 }
 
 .flavia-main-picture {
-  margin-top: 30px;
+  margin-top: 84px;
 }
 
 .quote {
   line-height: 37px;
-  max-width: 950px;
+  max-width: 1100px;
 
   p {
     display: flex;
@@ -235,44 +239,30 @@ header {
     font-weight: 100;
     font-style: normal;
     font-size: 20px;
-
-    .mark-left,
-    .mark-right {
-      width: 173px;
-      height: 173px;
-      position: relative;
-    }
+    position: relative;
+    max-width: 80%;
+    margin: 0 auto;
 
     &:before,
     &:after {
-      content: "";
-      // position: fixed;
-      // top: 0;
-      width: 173px;
-      height: 173px;
-      // background: rgba(#eaeaea, .2);
-      background:  url("../assets/quote.svg") no-repeat fixed center;
-
+      content: "\00a0";
+      position: absolute;
+      width: 50px;
+      height: 100px;
+      background: url("../assets/quote.svg") no-repeat center;
+      background-size: 113%;
+      z-index: -1;
     }
 
     &:before {
-      top: -48px;
+      top: -15px;
       transform: rotate(180deg);
+      left: -53px;
     }
 
-    &:right {
-      left: -15px;
-      top: -29px;
-    }
-
-    .mark-left {
-      top: -48px;
-      transform: rotate(180deg);
-    }
-
-    .mark-right {
-      left: -15px;
-      top: -29px;
+    &:after {
+      bottom: 0;
+      right: -40px;
     }
   }
 }
@@ -286,22 +276,48 @@ footer {
   >.footer-container {
     padding: 35px 0;
 
+    @include breakpoint-less(md) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
     .stay-in-touch {
       display: flex;
       justify-content: space-between;
+
+      @include breakpoint-less(md) {
+        flex-direction: column;
+      }
+
       .contact {
+        >div {
+          position: relative;
+        }
+
         a {
           @include underline($flavia-grey);
+          z-index: 3;
         }
       }
+
       .social-media {
         display: flex;
+
+        @include breakpoint-less(md) {
+          margin-top: 1rem;
+        }
 
         a {
           display: flex;
           justify-content: center;
           align-items: center;
           margin: 0 15px;
+
+          @include breakpoint-less(md) {
+            &:first-of-type {
+              margin-left: 0;
+            }
+          }
 
           img {
             margin-right: 10px;
@@ -316,7 +332,6 @@ footer {
   }
 
   .elsa {
-    font-weight: bold;
     @include underline($flavia-grey);
   }
 }

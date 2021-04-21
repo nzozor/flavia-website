@@ -1,12 +1,29 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
 /* You can add global styles to this file, and also import other style files */
 @import url("https://use.typekit.net/xcw2yqm.css");
 
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap');
+@import './scss/base-layout';
 
 $flavia-grey: #8E8E8E;
+
+.enter-view-port.visible {
+  opacity: 1;
+  transform: translateZ(0);
+}
+
+.enter-view-port {
+  opacity: 0;
+  transform: translate3d(0,-30px,0);
+  transition: transform 5s cubic-bezier(.18,1,.21,1),opacity 5s cubic-bezier(.18,1,.21,1);
+  &.visible {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
 
 @mixin font-aktiv-regular{
   font-family: aktiv-grotesk, sans-serif;
