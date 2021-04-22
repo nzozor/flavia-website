@@ -1,5 +1,5 @@
 <header id="header" class="transition-all ease-in-out ">
-  <div class="main-container mx-auto flex flex-row justify-between md:px-4 px-6
+  <div class="main-container mx-auto flex flex-row justify-between md:px-4 px-3
     items-center transition-all delay-100 ease-in-out  py-8"> 
   
     <span> <a href="#"><img src="../assets/Flavia-Logo.svg" alt="Flavia Frigeri" class="flavia-logo"></a> </span>
@@ -39,12 +39,19 @@
     </div>
   </div>
 </header>
-<img
+<!-- <img
   class="w-full flavia-main-picture"
   src="../assets/flavia-tate-slideshow1.png"
   alt="Flavia Home Page Curator London Italy"
-/>
-<section flaviaEnterViewport class="main-container  py-24 mx-auto quote md:px-4 px-6">
+/> -->
+
+<picture >
+  <source media="(max-width: 599px)" srcset="../assets/Flavia-mobile.jpg">
+  <source media="(min-width: 600px)" srcset="../assets/flavia-tate-slideshow1.png">
+  <img flaviaEnterViewport class="w-full flavia-main-picture" src="../assets/flavia-tate-slideshow1.png" alt="Flavia Home Page Curator London Italy">
+</picture>
+
+<section flaviaEnterViewport class="main-container  py-24 mx-auto quote md:px-4 px-3">
   <p class="md:text-center text-left">
     Flavia Frigeri is an art historian, curator, and teaching fellow at
     University College London. Frigeri is the author of Pop Art and Women
@@ -52,7 +59,35 @@
   </p>
 </section>
 
-<footer flaviaEnterViewport class="py-24 main-container mx-auto md:px-4 px-6">
+
+<section flaviaEnterViewport class="upcoming main-container  py-24 mx-auto  md:px-4 px-3 flex-col lg:flex-row flex">
+  <!-- <div class="title mb-32 w-full lg:w-1/2 flex md:hidden">
+    <h3>UPCOMING</h3>
+    <span class="hr-line flex-grow">&nbsp;</span>
+  </div> -->
+  <picture class="w-full lg:w-1/2">
+    <source media="(max-width: 599px)" srcset="../assets/upcoming.png">
+    <img flaviaEnterViewport class="w-full" srcset="../assets/upcoming@2x.png 2x" src="../assets/upcoming.png" alt="Flavia Home Page Curator London Italy">
+  </picture>
+  <div class="w-full lg:w-1/2 content-container lg:ml-32">
+    <div class="title md-mb-2 lg:mb-4 xl:mb-32  flex py-8 lg:py-0">
+      <h3>UPCOMING</h3>
+      <span class="hr-line flex-grow">&nbsp;</span>
+    </div>
+    <div class="content mb-6">
+      <h2 class="mb-2">GREAT WOMEN ARTIST</h2>
+      <h3 class="mb-6">NATIONAL PORTRAIT GALLERY</h3>
+      <p>
+        Flavia Frigeri is an art historian, curator, and teaching fellow 
+        at University College London. Frigeri is the author of Pop Art and Women Artists, 
+        both in Thames & Hudson’s Art Essentials series.
+      </p>
+    </div>
+    <div class="link"> <a href="">Read more</a> </div>
+  </div>
+</section>
+
+<footer flaviaEnterViewport class="py-24 main-container mx-auto md:px-4 px-3">
   <hr />
   <div class="footer-container">
     <div class="stay-in-touch">

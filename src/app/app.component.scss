@@ -181,7 +181,7 @@ header {
 
     &__list-item {
       @include font-aktiv-regular;
-      font-weight: 200;
+      font-weight: 300;
       text-transform: uppercase;
       font-size: 1.5rem;
       margin-bottom: .7rem;
@@ -289,6 +289,40 @@ header {
         bottom: -65px;
         right: -10px;
       }
+    }
+  }
+}
+
+.upcoming {
+  display: flex;
+  justify-content: space-between;
+  .title {
+    span {
+      border-bottom: 1px solid;
+      position: relative;
+      top: -10px;
+      margin-left: 10px;
+      color: $flavia-grey;
+    }
+  }
+  picture, > div {
+    // width: 50%;
+    // max-width: 728px;
+  }
+  picture {
+    img {
+      width: 100%;
+    }
+  }
+  p {
+    @include font-aktiv-regular;
+    line-height: 1.5rem;
+    letter-spacing: .4px;
+  }
+  .link {
+    a {
+      @include underline(black, visible);
+      font-size: 14px;
     }
   }
 }
