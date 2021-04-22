@@ -298,7 +298,7 @@ header {
   justify-content: space-between;
   .title {
     span {
-      border-bottom: 1px solid;
+      border-bottom: 1px solid #8e8e8e4a;
       position: relative;
       top: -10px;
       margin-left: 10px;
@@ -314,11 +314,13 @@ header {
       width: 100%;
     }
   }
+
   p {
     @include font-aktiv-regular;
     line-height: 1.5rem;
     letter-spacing: .4px;
   }
+
   .link {
     a {
       @include underline(black, visible);
