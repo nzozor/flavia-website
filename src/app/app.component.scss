@@ -139,7 +139,9 @@ header {
     $height: 100vh;
     $font--size--calc: calc(2vw + 10px);
     $transition--easing: cubic-bezier(.77, 0, .175, 1);
-    position: fixed;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
     z-index: 1;
     left: 0;
 
