@@ -9,14 +9,7 @@
 @import './scss/base-layout';
 
 
-HTML {
-  overflow: hidden;
-}
 
-body {
-  overflow: visible;
-  height: 100%;
-}
 $flavia-grey: #8E8E8E;
 
 .enter-view-port.visible {
