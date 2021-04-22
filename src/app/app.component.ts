@@ -19,6 +19,9 @@ export class AppComponent implements AfterViewInit{
 
   private onWindowScroll(event: any): void {
       console.log(window.pageYOffset);
+      if (this.isMobileMenuActive) {
+        return;
+      }
       const direction = window.pageYOffset > this.tempPageYOffset ? 'down' : 'up';
       this.tempPageYOffset = window.pageYOffset;
       if (!this.header) { return; }

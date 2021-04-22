@@ -140,7 +140,7 @@ header {
     $font--size--calc: calc(2vw + 10px);
     $transition--easing: cubic-bezier(.77, 0, .175, 1);
     position: fixed;
-    overflow-y: auto;
+    overflow: hidden;
     -webkit-overflow-scrolling: touch;
     z-index: 1;
     left: 0;
@@ -264,7 +264,7 @@ header {
       z-index: -1;
 
       @include breakpoint-less(lg) {
-        background-size: 153%;
+        background-size: 125%;
         height: 150px;
         width: 65px;
       }
