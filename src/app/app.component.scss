@@ -276,7 +276,7 @@ header {
       left: -53px;
 
       @include breakpoint-less(lg) {
-        top: -50px;
+        top: -80px;
         left: 0;
       }
     }
@@ -286,7 +286,7 @@ header {
       right: -30px;
 
       @include breakpoint-less(lg) {
-        bottom: -37px;
+        bottom: -73px;
         right: 2px;
       }
     }
