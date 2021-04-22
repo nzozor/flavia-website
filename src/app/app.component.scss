@@ -264,7 +264,7 @@ header {
       z-index: -1;
 
       @include breakpoint-less(lg) {
-        background-size: 125%;
+        background-size: 110%;
         height: 150px;
         width: 65px;
       }
