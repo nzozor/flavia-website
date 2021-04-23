@@ -31,3 +31,12 @@
     }
   }
 }
+
+flavia-quote {
+  ::ng-deep {
+    section {
+      @apply py-8;
+
+    }
+  }
+}

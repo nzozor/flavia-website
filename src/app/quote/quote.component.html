@@ -1,4 +1,4 @@
-<section flaviaEnterViewport class="main-container  py-24 mx-auto quote md:px-4 px-3">
+<section flaviaEnterViewport class="main-container mx-auto quote md:px-4 px-3" [class.py-24]="showIcon"  [class.py-8]="!showIcon">
 
   <p class="md:text-center text-left" [class.no-icon]="!showIcon">
     <ng-content>
