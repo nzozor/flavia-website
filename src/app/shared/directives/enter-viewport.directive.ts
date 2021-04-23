@@ -6,7 +6,7 @@ import { isPlatformBrowser } from '@angular/common';
   selector: '[flaviaEnterViewport]'
 })
 export class EnterViewportDirective  implements OnDestroy, OnInit, AfterContentInit {
-  @Input() threshold = 0.2;
+  @Input() threshold = 0;
 
   @Output() visible = new EventEmitter<HTMLElement>();
   @HostBinding('class') elementVisibilityClass: string;

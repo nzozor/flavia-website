@@ -1,6 +1,6 @@
 @import '../../../styles.scss';
 
-.main-container {
+.container {
   @include font-aktiv-regular;
   color: $flavia-grey;
   line-height: 35px;
@@ -60,6 +60,8 @@
   }
 
   .elsa {
-    @include underline($flavia-grey);
+    a {
+      @include underline($flavia-grey, visible);
+    }
   }
 }
