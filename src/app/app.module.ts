@@ -14,6 +14,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ExhibitionsComponent } from './pages/exhibitions/exhibitions.component';
 import { BooksComponent } from './pages/books/books.component';
+import { EssaysComponent } from './pages/essays/essays.component';
+import { TeachingComponent } from './pages/teaching/teaching.component';
+import { TalksComponent } from './pages/talks/talks.component';
+import { NewsComponent } from './pages/news/news.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { BooksComponent } from './pages/books/books.component';
     HomePageComponent,
     AboutComponent,
     ExhibitionsComponent,
-    BooksComponent
+    BooksComponent,
+    EssaysComponent,
+    TeachingComponent,
+    TalksComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

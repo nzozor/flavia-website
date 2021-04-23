@@ -1,0 +1,24 @@
+<flavia-header [underline]="true"></flavia-header>
+<div class="container mx-auto  w-11/12 py-6 lg:py-24 flex flex-col">
+  <h2 class="mb-10 mt-20 lg:mt-12">ESSAYS</h2>
+  <div class="essay-container flex flex-col flex-wrap w-full  lg:w-2/3 self-end" *ngFor="let article of [1,2,3,4,5]">
+    <section flaviaEnterViewport class="section flex-col md:flex-row flex lg:m-8  w-full md:pr-8 mr-0 lg:pr-16 py-8" >
+      <picture class="w-full  max-w-md self-center md:self-start mb-8 md:mb-0">
+        <source media="(max-width: 599px)" srcset="../../../assets/pop-art.png">
+        <img flaviaEnterViewport class="w-full" srcset="../../../assets/pop-art@2x.png" src="../../../assets/pop-art.png" alt="Flavia Home Page Curator London Italy">
+      </picture>
+      <div class="w-full  content-container flex flex-col">
+        <div class="flex-grow flex flex-col justify-center">
+          <div class="content mb-6">
+            <h2 class="mb-2">The Invisible Hand: On Alexis Harding, for Museo dell’Arte Contemporanea, Lissone</h2>
+            <h3 class="mb-6">October 16, 2020</h3>
+            <p class="article">
+            </p>
+          </div>
+          <div class="link mb-8"> <a href="">Read more</a> </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+  </div>
+</div>

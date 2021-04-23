@@ -1,0 +1,9 @@
+h2,h3 {
+  text-transform: uppercase;
+}
+
+.essay-container:last-of-type {
+    hr {
+      display: none;
+    }
+}
