@@ -1,0 +1,41 @@
+<header id="header" class="transition-all ease-in-out ">
+  <div class="main-container mx-auto flex flex-row justify-between md:px-4 px-3
+    items-center transition-all delay-100 ease-in-out  py-8"  [class.border-b]="underline"> 
+  
+    <span> <a href="#"><img src="../assets/Flavia-Logo.svg" alt="Flavia Frigeri" class="flavia-logo"></a> </span>
+  
+    <nav class="flex-row space-x-6 hidden lg:flex" >
+      <a [routerLink]="['/home']">Home</a>
+      <a [routerLink]="['/about']" href="#">About</a>
+      <a href="#">Exibitions</a>
+      <a href="#">Books</a>
+      <a href="#">Essays</a>
+      <a href="#">Teaching</a>
+      <a href="#">Talks</a>
+      <a href="#">News</a>
+    </nav>
+
+    <div class="menu-icon lg:hidden"  (click)="toggleMenu()" >
+      <input class="menu-icon__cheeckbox" type="checkbox" />
+      <div>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="nav" [class.nav-active]="isMobileMenuActive" >
+      <div class="nav__content">
+        <ul class="nav__list flex flex-col laptop:flex-row ">
+          <li class="nav__list-item"><a [routerLink]="['/home']">Home</a></li>
+          <li class="nav__list-item"><a [routerLink]="['/about']" href="#">About</a></li>
+          <li class="nav__list-item"><a [routerLink]="['/exhibitions']" href="#">Exibitions</a></li>
+          <li class="nav__list-item">Books</li>
+          <li class="nav__list-item">Essays</li>
+          <li class="nav__list-item">Teaching</li>
+          <li class="nav__list-item">Talks</li>
+          <li class="nav__list-item">News</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

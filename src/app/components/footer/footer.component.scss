@@ -1,0 +1,65 @@
+@import '../../../styles.scss';
+
+.main-container {
+  @include font-aktiv-regular;
+  color: $flavia-grey;
+  line-height: 35px;
+  padding-bottom: 0 !important;
+
+  .footer-container {
+    padding: 35px 0;
+
+    .stay-in-touch {
+      display: flex;
+      justify-content: space-between;
+
+      @include breakpoint-less(md) {
+        flex-direction: column;
+      }
+
+      .contact {
+        >div {
+          position: relative;
+        }
+
+        a {
+          @include underline($flavia-grey);
+          z-index: 3;
+        }
+      }
+
+      .social-media {
+        display: flex;
+
+        @include breakpoint-less(md) {
+          margin-top: 1rem;
+        }
+
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 15px;
+
+          @include breakpoint-less(md) {
+            &:first-of-type {
+              margin-left: 0;
+            }
+          }
+
+          img {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    .copyright {
+      margin-top: 40px;
+    }
+  }
+
+  .elsa {
+    @include underline($flavia-grey);
+  }
+}

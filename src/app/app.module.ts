@@ -6,11 +6,25 @@ import { AppComponent } from './app.component';
 import { EnterViewportDirective } from './shared/directives/enter-viewport.directive';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { FooterComponent } from './components/footer/footer.component';
+import { UpcomingComponent } from './components/upcoming/upcoming.component';
+import { QuoteComponent } from './quote/quote.component';
+import { HeaderComponent } from './header/header.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ExhibitionsComponent } from './pages/exhibitions/exhibitions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EnterViewportDirective
+    EnterViewportDirective,
+    FooterComponent,
+    UpcomingComponent,
+    QuoteComponent,
+    HeaderComponent,
+    HomePageComponent,
+    AboutComponent,
+    ExhibitionsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
