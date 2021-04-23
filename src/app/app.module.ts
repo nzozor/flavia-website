@@ -13,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ExhibitionsComponent } from './pages/exhibitions/exhibitions.component';
+import { BooksComponent } from './pages/books/books.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ExhibitionsComponent } from './pages/exhibitions/exhibitions.component'
     HeaderComponent,
     HomePageComponent,
     AboutComponent,
-    ExhibitionsComponent
+    ExhibitionsComponent,
+    BooksComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

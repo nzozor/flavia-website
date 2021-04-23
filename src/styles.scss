@@ -6,7 +6,7 @@
 @import url("https://use.typekit.net/xcw2yqm.css");
 
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap');
-@import './scss/base-layout';
+
 
 
 
@@ -83,22 +83,77 @@ h3 {
 
 h2 {
   @include font-aktiv-regular;
-  font-size: 25px;
+  font-size: 31px;
   color: black;
   font-weight: 300;
   letter-spacing: 1px;
+
 }
 
+section {
+  h2 {
+    font-size: 25px;
+  }
+}
+
+
 .link {
-  @include font-aktiv-regular;
+  @include font-aktiv-regular; 
   font-size: 15px;
   color: black;
+
+  a {
+   @include underline(black, visible);
+ }
 }
 
 p {
   font-family: ivyjournal, sans-serif;
   font-weight: 300;
   font-style: normal;
+
+  &.article {
+    @include font-aktiv-regular;
+    line-height: 1.5rem;
+    letter-spacing: .4px;
+    letter-spacing: 0.4px;
+  }
 }
 
 
+.upcoming {
+  display: flex;
+  justify-content: space-between;
+  .title {
+    span {
+      border-bottom: 1px solid #8e8e8e4a;
+      position: relative;
+      top: -10px;
+      margin-left: 10px;
+      color: $flavia-grey;
+    }
+  }
+
+  picture {
+    img {
+      width: 100%;
+    }
+  }
+
+  p {
+    @include font-aktiv-regular;
+    line-height: 1.5rem;
+    letter-spacing: .4px;
+  }
+
+  .link {
+    a {
+      @include underline(black, visible);
+      font-size: 14px;
+    }
+  }
+}
+
+
+@import './scss/base-layout';
+@import './scss/upcoming';
