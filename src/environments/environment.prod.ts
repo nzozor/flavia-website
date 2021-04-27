@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  jwt: '8cdb3c62-1c40-412a-a111-5b438959725d',
+  cmsUrl: 'http://localhost:1338'
 };
