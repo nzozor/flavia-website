@@ -29,6 +29,12 @@ export class CmsService {
     );
   }
 
+  public getLastExhibition(): Observable<Article>{
+    return this.api.get<Article[]>(environment.cmsUrl, 'event-articles?event_type.type=Exhibition&_sort=date:desc&_limit=1').pipe(
+      map(articles => articles[0])
+    );
+  }
+
   public getBooks(): Observable<Article[]>{
     return this.api.get<Article[]>(environment.cmsUrl, 'event-articles?event_type.type=Book').pipe(
       map(articles => this.sortByDate(articles))

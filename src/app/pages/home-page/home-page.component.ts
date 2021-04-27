@@ -21,7 +21,8 @@ export class HomePageComponent implements OnInit {
   exhibition: Article;
   ngOnInit(): void {
       this.loadAssets();
-  }
+      this.loadExhibitions();
+  };
 
   public get cmsUrl(): string {
     return this.cms.cmsUrl;
@@ -37,7 +38,7 @@ export class HomePageComponent implements OnInit {
   }
 
   private loadExhibitions(): void {
-    this.loading  = true;
+    this.loadingAssets  = true;
 
     this.cms.getLastExhibition().subscribe(data => {
       this.loadingAssets  = false;

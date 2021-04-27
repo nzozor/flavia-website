@@ -13,4 +13,25 @@
   {{ assets.introQuote}}
 </flavia-quote>
 
-<flavia-upcoming></flavia-upcoming>
+<section flaviaEnterViewport class="upcoming  py-4 lg:py-12 flex-col lg:flex-row flex container mx-auto  w-11/12" *ngIf="exhibition">
+  <picture class="w-full lg:w-1/2">
+    <source media="(max-width: 599px)" srcset="{{ cmsUrl + exhibition.image?.url}}">
+        <img flaviaEnterViewport class="w-full" srcset="{{ cmsUrl + exhibition.image?.url}} 2x" src="{{ cmsUrl + exhibition.image?.url}}" alt="Flavia Home Page Curator London Italy">
+  </picture>
+  <div class="w-full lg:w-1/2 content-container lg:ml-32 flex flex-col">
+    <div class="title  flex py-8 lg:py-0">
+      <h3>UPCOMING</h3>
+      <span class="hr-line flex-grow">&nbsp;</span>
+    </div>
+    <div class="flex-grow flex flex-col justify-center">
+      <div class="content mb-6">
+        <h2 class="mb-2">{{exhibition.title }}</h2>
+        <h3 class="mb-6">{{exhibition.location }}</h3>
+        <p>
+          {{exhibition.description}}
+        </p>
+      </div>
+      <div class="link" *ngIf="exhibition.readMoreLink"> <a href="{{exhibition.readMoreLink}}" alt="Read More" target="_blank">Read more</a> </div>
+    </div>
+  </div>
+</section>
