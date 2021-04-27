@@ -1,15 +1,16 @@
 <flavia-header></flavia-header>
 
-<picture >
-  <source media="(max-width: 599px)" srcset="../assets/Flavia-mobile.jpg">
-  <source media="(min-width: 600px)" srcset="../assets/flavia-tate-slideshow1.png">
-  <img flaviaEnterViewport class="w-full flavia-main-picture" src="../assets/flavia-tate-slideshow1.png" alt="Flavia Home Page Curator London Italy">
+<picture *ngIf="assets">
+  <source media="(max-width: 599px)" srcset="{{cmsUrl + assets.mainImageMobile.url}}">
+  <source media="(min-width: 600px)" srcset="{{cmsUrl + assets.mainImageLarge.url}}">
+  <img flaviaEnterViewport class="w-full flavia-main-picture" src="{{cmsUrl + assets.mainImageLarge.url}}" alt="Flavia Home Page Curator London Italy">
 </picture>
 
-<flavia-quote >
-  Flavia Frigeri is an art historian, curator, and teaching fellow at
-  University College London. Frigeri is the author of Pop Art and Women
-  Artists, both in Thames & Hudson’s Art Essentials series.
+
+<flavia-loader *ngIf="loadingAssets"></flavia-loader>
+
+<flavia-quote *ngIf="assets">
+  {{ assets.introQuote}}
 </flavia-quote>
 
 <flavia-upcoming></flavia-upcoming>

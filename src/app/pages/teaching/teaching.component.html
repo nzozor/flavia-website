@@ -1,19 +1,18 @@
 <flavia-header [underline]="true"></flavia-header>
 <div class="container mx-auto  w-11/12 py-6 lg:py-24 flex flex-col">
   <h2 class="mb-10 mt-20 lg:mt-12">TEACHING</h2>
-  <div class="teaching-container flex flex-col flex-wrap w-full  lg:w-2/3 self-end" *ngFor="let article of [1,2]">
+  <div class="teaching-container flex flex-col flex-wrap w-full  lg:w-2/3 self-end" *ngFor="let article of teachings">
     <section flaviaEnterViewport class="section flex-col md:flex-row flex lg:m-8  w-full md:pr-8 mr-0 lg:pr-16 py-8" >
       <div class="w-full  content-container flex flex-col">
         <div class="flex-grow flex flex-col justify-center">
           <div class="content mb-6">
-            <h2 class="mb-2">COURSE TITLE GOES HERE</h2>
-            <h3 class="mb-6">COURSE TITLE GOES HERE</h3>
+            <h2 class="mb-2">{{ article.title }}</h2>
+            <h3 class="mb-6">{{ article.title }}</h3>
             <p class="article">
-              Flavia Frigeri is an art historian, curator, and teaching fellow at University College London. Frigeri is the author of Pop Art and Women Artists, both in Thames & Hudson’s Art Essentials series.
-Botond Reszegh is a Hungarian artist who lives and works in Miercurea Ciuc, a small, quiet, mountain rimmed town in Eastern Transylvania, Romania. He is a graphic artist, painter, illustrator and thinker, and works as the art director of Új Kriterion/New Criterion – the leading contemporary art gallery in his hometown. Susie MacMurray’s ‘Murmur’ is constructed of ostrich feather barbs bound together in pairs with thread, their tips sealed with wax Ostrich feather barbs, piano wire, fish hooks, wax and upholstery artworks.
+              {{article.description}}
             </p>
           </div>
-          <div class="link mb-8"> <a href="">Read more</a> </div>
+          <div class="link mb-8"  *ngIf="article.readMoreLink"> <a href="{{article.readMoreLink}}" alt="Read More" target="_blank">Read more</a> </div>
         </div>
       </div>
     </section>

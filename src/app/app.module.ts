@@ -18,6 +18,8 @@ import { EssaysComponent } from './pages/essays/essays.component';
 import { TeachingComponent } from './pages/teaching/teaching.component';
 import { TalksComponent } from './pages/talks/talks.component';
 import { NewsComponent } from './pages/news/news.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +36,12 @@ import { NewsComponent } from './pages/news/news.component';
     EssaysComponent,
     TeachingComponent,
     TalksComponent,
-    NewsComponent
+    NewsComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    HttpClientModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { CmsService } from 'src/app/shared/services/cms.service';
+
+export interface AboutPageAssets {
+  title: string;
+  description: string;
+  quoteText: string;
+  imageLargeScreen: { url: string};
+  imageSmallScreen: { url: string };
+}
 
 @Component({
   selector: 'flavia-about',
@@ -7,9 +16,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private cms: CmsService) { }
+  public loadingAssets  = false;
+  public assets: AboutPageAssets;
+  public ngOnInit(): void {
+      this.loadAssets();
   }
 
+  public get cmsUrl(): string {
+    return this.cms.cmsUrl;
+  }
+  private loadAssets(): void {
+    this.loadingAssets  = true;
+    
+    this.cms.getAboutPageData().subscribe(data => {
+      this.loadingAssets  = false;
+      this.assets = data;
+    });
+  }
 }
