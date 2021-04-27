@@ -172,19 +172,34 @@ header {
       @include font-aktiv-regular;
       font-weight: 300;
       text-transform: uppercase;
-      font-size: 1.5rem;
+      font-size: 1.1rem;
       margin-bottom: .7rem;
       transition-delay: $transition--length + s;
       opacity: 0;
       transform: translate(0%, -60%);
       transition: opacity .2s ease, transform .3s ease;
       margin-right: 25px;
-
+      line-height: 1.8rem;
       @include underline(black);
 
       @include breakpoint-less(md) {
         margin-right: 0;
       }
+    }
+
+
+    .social-media {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity .3s ease, transform .3s ease, color .3s ease;
+       > div:nth-child(2){
+         a, img {
+           margin-right: 0;
+         }
+       }
     }
 
     &.nav-active {
@@ -214,6 +229,14 @@ header {
             transition-delay: $transition--length * $i / 8 + .3 + s;
           }
         }
+      }
+
+      .social-media {
+        opacity: 1;
+        // transform: translateX(0%);
+        transition: opacity .3s ease, transform .3s ease, color .3s ease;
+        transition-delay: $transition--length * $menu--items--count / 8 + .3 + s;
+
       }
 
     }

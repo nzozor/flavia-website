@@ -25,7 +25,7 @@
 
     <div class="nav" [class.nav-active]="isMobileMenuActive" >
       <div class="nav__content">
-        <ul class="nav__list flex flex-col laptop:flex-row ">
+        <ul class="nav__list flex flex-col laptop:flex-row " (click)="toggleMenu()">
           <li class="nav__list-item"><a [routerLink]="['/home']">Home</a></li>
           <li class="nav__list-item"><a [routerLink]="['/about']" href="#">About</a></li>
           <li class="nav__list-item"><a [routerLink]="['/exhibitions']" href="#">Exibitions</a></li>
@@ -35,6 +35,18 @@
           <li class="nav__list-item"><a [routerLink]="['/talks']">Talks</a></li>
           <li class="nav__list-item"><a [routerLink]="['/news']">News</a></li>
         </ul>
+      </div>
+      <div class="social-media">
+        <div>
+          <a href="https://www.instagram.com/flavia_fffff/" target="_blank">
+            <img src="../assets/insta.svg" alt="Instagram" />
+          </a>
+        </div>
+        <div>
+          <a href="https://uk.linkedin.com/in/flavia-frigeri-3610b222/en-us" target="_blank">
+            <img src="../assets/Linkedin.svg" alt="Linkedin" />
+          </a>
+        </div>
       </div>
     </div>
   </div>

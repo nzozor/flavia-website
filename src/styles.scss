@@ -21,6 +21,8 @@ sans-serif;
 $transition--length: .8;
 $header-height: 85px;
 
+@import './scss/base-layout';
+
 .enter-view-port.visible {
   opacity: 1;
   transform: translateZ(0);
@@ -121,39 +123,30 @@ p {
 }
 
 
-.upcoming {
+
+.social-media {
   display: flex;
-  justify-content: space-between;
-  .title {
-    span {
-      border-bottom: 1px solid #8e8e8e4a;
-      position: relative;
-      top: -10px;
-      margin-left: 10px;
-      color: $flavia-grey;
-    }
+
+  @include breakpoint-less(md) {
+    margin-top: 1rem;
   }
 
-  picture {
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 15px;
+
+    @include breakpoint-less(md) {
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+
     img {
-      width: 100%;
-    }
-  }
-
-  p {
-    @include font-aktiv-regular;
-    line-height: 1.5rem;
-    letter-spacing: .4px;
-  }
-
-  .link {
-    a {
-      @include underline(black, visible);
-      font-size: 14px;
+      margin-right: 10px;
     }
   }
 }
 
-
-@import './scss/base-layout';
 @import './scss/upcoming';
