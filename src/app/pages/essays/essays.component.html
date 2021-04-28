@@ -1,5 +1,8 @@
 <flavia-header [underline]="true"></flavia-header>
-<div class="container mx-auto  w-11/12 py-6 lg:py-24 flex flex-col">
+<div class="mt-32" *ngIf="!essays">
+  <flavia-loader ></flavia-loader>
+</div>
+<div class="container mx-auto  w-11/12 py-6 lg:py-24 flex flex-col" *ngIf="essays">
   <h2 class="mb-10 mt-20 lg:mt-12">ESSAYS</h2>
   <div class="essay-container flex flex-col flex-wrap w-full  lg:w-2/3 self-end" *ngFor="let article of essays">
     <section flaviaEnterViewport class="section flex-col md:flex-row flex lg:m-8  w-full md:pr-8 mr-0 lg:pr-16 py-8" >

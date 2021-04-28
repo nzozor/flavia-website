@@ -1,6 +1,8 @@
 <flavia-header [underline]="true"></flavia-header>
-
-<div class="container mx-auto  w-11/12 py-6 lg:py-24" >
+<div class="mt-32" *ngIf="!talks">
+  <flavia-loader ></flavia-loader>
+</div>
+<div class="container mx-auto  w-11/12 py-6 lg:py-24" *ngIf="talks">
   <h2 class="mb-10 mt-20 lg:mt-12">TALKS</h2>
   <section flaviaEnterViewport class="upcoming py-4 lg:py-12 flex-col lg:flex-row flex" *ngIf="lastTalk"> 
     <div class="w-full lg:w-1/2 content-container lg:mr-32 flex flex-col">

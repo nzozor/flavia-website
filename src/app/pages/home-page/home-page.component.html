@@ -7,8 +7,9 @@
 </picture>
 
 
-<flavia-loader *ngIf="loadingAssets"></flavia-loader>
-
+<div class="mt-32" *ngIf="loadingAssets">
+  <flavia-loader ></flavia-loader>
+</div>
 <flavia-quote *ngIf="assets">
   {{ assets.introQuote}}
 </flavia-quote>

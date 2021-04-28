@@ -1,5 +1,7 @@
 <flavia-header [underline]="true"></flavia-header>
-
+<div class="mt-32" *ngIf="!lastExhibition">
+  <flavia-loader ></flavia-loader>
+</div>
 <div class="container mx-auto  w-11/12 py-6 lg:py-24" *ngIf="lastExhibition">
   <h2 class="mb-10 mt-20 lg:mt-12">EXHIBITIONS</h2>
   <section flaviaEnterViewport class="upcoming py-4 lg:py-12 flex-col lg:flex-row flex">
@@ -35,7 +37,7 @@
     <section flaviaEnterViewport class="upcoming  py-4 lg:py-12 flex-col lg:flex-row flex container mx-auto  w-11/12 mb-8 lg:mb-0" *ngFor="let article of exhibitions">
       <picture class="w-full lg:w-1/2 mb-8 lg:mb-0">
         <source media="(max-width: 599px)" srcset="{{ cmsUrl + article.image.formats.small.url}}">
-        <img flaviaEnterViewport class="w-full" srcset="{{ cmsUrl + lastExhibition.image.url}} 2x" src="{{ cmsUrl + article.image.formats.small.url}}" alt="Flavia Home Page Curator London Italy">
+        <img flaviaEnterViewport class="w-full" srcset="{{ cmsUrl + article.image.url}} 2x" src="{{ cmsUrl + article.image.formats.small.url}}" alt="Flavia Home Page Curator London Italy">
       </picture>
       <div class="w-full lg:w-1/2 content-container lg:ml-32 flex flex-col">
         <div class="flex-grow flex flex-col justify-center">

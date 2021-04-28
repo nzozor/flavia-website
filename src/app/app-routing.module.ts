@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'essays', component: EssaysComponent },
   { path: 'teaching', component: TeachingComponent },
   { path: 'talks', component: TalksComponent },
-  { path: 'news', component: NewsComponent },
+  { path: 'contact', component: NewsComponent },
   { path: '**', component: HomePageComponent }
 ];
 
