@@ -1,0 +1,23 @@
+@import '../../../styles.scss';
+
+.main-tile {
+  .title {
+    p {
+      font-size: 25px;
+      font-weight: 300;
+      line-height: 2rem;
+    }
+  }
+
+  .contact {
+    p {
+      font-size: 15px;
+      font-weight: 400;
+      span {
+        display: inline-block;
+        min-width: 100px;
+        color: $flavia-grey;
+      }
+    }
+  }
+}

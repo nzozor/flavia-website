@@ -193,6 +193,11 @@ header {
       bottom: 0;
       left: 50%;
       transform: translate(-50%, -50%);
+      
+      img {
+        max-width: 30px;
+      }
+
       opacity: 0;
       transition: opacity .3s ease, transform .3s ease, color .3s ease;
        > div:nth-child(2){

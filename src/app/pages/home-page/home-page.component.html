@@ -6,7 +6,6 @@
   <img flaviaEnterViewport class="w-full flavia-main-picture" src="{{cmsUrl + assets.mainImageLarge.url}}" alt="Flavia Home Page Curator London Italy">
 </picture>
 
-
 <div class="mt-32" *ngIf="loadingAssets">
   <flavia-loader ></flavia-loader>
 </div>
@@ -14,14 +13,14 @@
   {{ assets.introQuote}}
 </flavia-quote>
 
-<section flaviaEnterViewport class="upcoming  py-4 lg:py-12 flex-col lg:flex-row flex container mx-auto  w-11/12" *ngIf="exhibition">
+<section flaviaEnterViewport class="main-tile  py-4 lg:py-12 flex-col lg:flex-row flex container mx-auto  w-11/12" *ngIf="exhibition">
   <picture class="w-full lg:w-1/2">
     <source media="(max-width: 599px)" srcset="{{ cmsUrl + exhibition.image?.url}}">
         <img flaviaEnterViewport class="w-full" srcset="{{ cmsUrl + exhibition.image?.url}} 2x" src="{{ cmsUrl + exhibition.image?.url}}" alt="Flavia Home Page Curator London Italy">
   </picture>
   <div class="w-full lg:w-1/2 content-container lg:ml-32 flex flex-col">
-    <div class="title  flex py-8 lg:py-0">
-      <h3>UPCOMING</h3>
+    <div class="title  flex py-8 lg:py-0 lg:mb-4">
+      <h3>LATEST</h3>
       <span class="hr-line flex-grow">&nbsp;</span>
     </div>
     <div class="flex-grow flex flex-col justify-center">

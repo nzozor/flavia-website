@@ -25,20 +25,19 @@
       background: url("../../assets/quote.svg") no-repeat center;
       background-size: 113%;
       z-index: -1;
-
       @include breakpoint-less(lg) {
         background-size: 100%;
         height: 150px;
         width: 90px;
-      }
+      } 
     }
-
     &:before {
       top: -25px;
       transform: rotate(180deg);
       left: -53px;
 
       @include breakpoint-less(lg) {
+        display: none;
         top: -65px;
         left: -10px;
       }
