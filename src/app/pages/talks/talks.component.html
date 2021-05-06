@@ -4,10 +4,10 @@
 </div>
 <div class="container mx-auto  w-11/12 py-6 lg:py-24" *ngIf="talks">
   <h2 class="mb-10 mt-20 lg:mt-12">TALKS</h2>
-  <section flaviaEnterViewport class="upcoming py-4 lg:py-12 flex-col lg:flex-row flex" *ngIf="lastTalk"> 
+  <section flaviaEnterViewport class="main-tile py-4 lg:py-12 flex-col lg:flex-row flex" *ngIf="lastTalk"> 
     <div class="w-full lg:w-1/2 content-container lg:mr-32 flex flex-col">
       <div class="title  flex py-8 lg:py-0">
-        <h3>UPCOMING</h3>
+        <h3>main-tile</h3>
         <span class="hr-line flex-grow">&nbsp;</span>
       </div>
     </div>
@@ -31,7 +31,7 @@
     <span class="hr-line flex-grow">&nbsp;</span>
   </div>
 
-  <section flaviaEnterViewport class="upcoming py-4 lg:py-12 flex-col lg:flex-row flex container mx-auto  w-11/12 mb-8 lg:mb-0">
+  <section flaviaEnterViewport class="main-tile py-4 lg:py-12 flex-col lg:flex-row flex container mx-auto  w-11/12 mb-8 lg:mb-0">
     <picture class="w-full lg:w-1/2 mb-8 lg:mb-0 lg:pr-16">
       <source media="(max-width: 599px)" srcset="{{ cmsUrl + mainTalkImg }}">
       <img flaviaEnterViewport class="w-full" srcset="{{ cmsUrl + mainTalkImg }} 2x" src="{{ cmsUrl + mainTalkImg }}" alt="Flavia Home Page Curator London Italy">
