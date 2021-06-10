@@ -1,0 +1,10 @@
+@import '../../../styles.scss';
+
+.intro-about {
+  p {
+    @include font-aktiv-regular;
+    line-height: 1.5rem;
+    letter-spacing: .4px;
+    margin-bottom: 15px;
+  }
+}

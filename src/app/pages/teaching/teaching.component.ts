@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from 'src/app/shared/models/article.model';
+import { Page } from 'src/app/shared/models/page.model';
 import { CmsService } from 'src/app/shared/services/cms.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class TeachingComponent implements OnInit {
   constructor(private cms: CmsService) { }
   public loading = false;
   public teachings: Article[];
+  public staticContent: Page;
   public ngOnInit(): void {
     this.loadBooks();
   }
@@ -29,7 +31,8 @@ export class TeachingComponent implements OnInit {
 
     this.cms.getTeaching().subscribe(data => {
       this.loading = false;
-      this.teachings = data;
+      this.teachings = data.teachingList;
+      this.staticContent = data.teachingPageStaticContent;
     });
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from 'src/app/shared/models/article.model';
+import { Page } from 'src/app/shared/models/page.model';
 import { CmsService } from 'src/app/shared/services/cms.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class ExhibitionsComponent implements OnInit {
   constructor(private cms: CmsService) { }
   public loading  = false;
   public exhibitions: Article[];
+  public staticContent: Page;
   public lastExhibition: Article;
   public ngOnInit(): void {
       this.loadExhibitions();
@@ -25,8 +27,8 @@ export class ExhibitionsComponent implements OnInit {
 
     this.cms.getExhibitions().subscribe(data => {
       this.loading  = false;
-      this.lastExhibition = data.shift() as Article;
-      this.exhibitions = data;
+      this.exhibitions = data.exhibitionsList;
+      this.staticContent = data.exhibitionStaticContent;
     });
   }
 }

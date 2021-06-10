@@ -20,6 +20,7 @@ import { TalksComponent } from './pages/talks/talks.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './components/loader/loader.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import {MarkdownToHtmlModule} from 'markdown-to-html-pipe';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ContactComponent } from './pages/contact/contact.component';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    MarkdownToHtmlModule,
     HttpClientModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
@@ -48,7 +50,8 @@ import { ContactComponent } from './pages/contact/contact.component';
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

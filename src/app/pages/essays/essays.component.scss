@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 h2,h3 {
   text-transform: uppercase;
 }
@@ -6,4 +8,19 @@ h2,h3 {
     hr {
       display: none;
     }
+}
+
+section {
+  p {
+    @include font-aktiv-regular;
+    line-height: 1.5rem;
+    letter-spacing: .4px;
+  }
+
+}
+img {
+  @include breakpoint-above(md) {
+    position: sticky;
+    top: 0;
+  }
 }

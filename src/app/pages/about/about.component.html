@@ -1,23 +1,20 @@
-<flavia-header [underline]="true"></flavia-header>
 <div class="mt-32" *ngIf="!assets">
   <flavia-loader ></flavia-loader>
 </div>
-<section flaviaEnterViewport class="container mx-auto w-11/12  py-6 lg:py-24" *ngIf="assets">
+<div class="container mx-auto  w-11/12 py-6 lg:py-24" *ngIf="assets">
   <h2 class="mb-10 mt-20 lg:mt-12">{{assets.title}}</h2>
-  <div class="flex-col lg:mt-0 mt-24 lg:flex-row flex content-between">
-    <div class="w-full lg:w-1/2 content-container flex items-center">
-      <div class="content mb-6">
-        <p class="article">
-          {{assets.description}} 
-        </p>
+  <section flaviaEnterViewport class="py-8 lg:py-12 flex-col lg:flex-row flex">
+    <div class="flex-col mt-0 lg:flex-row flex content-between">
+      <div class="w-full lg:w-1/2 content-container flex items-center">
+        <div class="content mb-6">
+          <div class="intro-about" [innerHTML]="assets.intro | MarkdownToHtml">
+          </div>
+        </div>
       </div>
+      <picture class="w-full lg:w-1/2 lg:ml-32">
+        <source media="(max-width: 599px)" srcset="{{cmsUrl + assets.imageSmallScreen.url}}">
+        <img flaviaEnterViewport class="w-full" srcset="{{cmsUrl + assets.imageLargeScreen.url}} 2x" src="{{cmsUrl + assets.imageLargeScreen.url}}" alt="Flavia Home Page Curator London Italy">
+      </picture>
     </div>
-    <picture class="w-full lg:w-1/2 lg:ml-32">
-      <source media="(max-width: 599px)" srcset="{{cmsUrl + assets.imageSmallScreen.url}}">
-      <img flaviaEnterViewport class="w-full" srcset="{{cmsUrl + assets.imageLargeScreen.url}} 2x" src="{{cmsUrl + assets.imageLargeScreen.url}}" alt="Flavia Home Page Curator London Italy">
-    </picture>
-  </div>
-</section>
-<flavia-quote [showIcon]="false" *ngIf="assets">
-  {{assets.quoteText}} 
-</flavia-quote>
+  </section>
+</div>

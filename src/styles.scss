@@ -70,6 +70,8 @@ $header-height: 85px;
     }
   }
 }
+html, body { height: 100%; width: 100%; margin: 0; }
+
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -98,7 +100,14 @@ section {
     font-size: 25px;
   }
 }
-
+.page-intro {
+  font-size: 18px;
+  font-family: ivyjournal, sans-serif;
+  line-height: 37px;
+  @include breakpoint-less(md) {
+    line-height: 34px;
+  }
+}
 .link {
   @include font-aktiv-regular; 
   font-size: 15px;
@@ -146,5 +155,4 @@ p {
     }
   }
 }
-
 @import './scss/upcoming';

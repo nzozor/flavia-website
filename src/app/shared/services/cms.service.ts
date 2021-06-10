@@ -6,6 +6,8 @@ import { environment } from './../../../environments/environment';
 import { AboutPageAssets } from 'src/app/pages/about/about.component';
 import { Article } from '../models/article.model';
 import { map } from 'rxjs/operators';
+import { forkJoin } from 'rxjs';
+import { Page } from '../models/page.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,12 +25,15 @@ export class CmsService {
     return this.api.get<AboutPageAssets>(environment.cmsUrl, 'about-page');
   }
 
-  public getExhibitions(): Observable<Article[]>{
-    return this.api.get<Article[]>(environment.cmsUrl, 'event-articles?event_type.type=Exhibition&_sort=date:desc');
+  public getExhibitions(): Observable<{exhibitionsList: Article[], exhibitionStaticContent: Page }> {
+    return forkJoin({
+      exhibitionsList: this.api.get<Article[]>(environment.cmsUrl, 'event-articles?event_type.type=Exhibition&_sort=date:desc'),
+      exhibitionStaticContent:   this.api.get<any>(environment.cmsUrl, 'exhibitions-page')
+    });
   }
 
   public getLastExhibition(): Observable<Article>{
-    return this.api.get<Article[]>(environment.cmsUrl, 'event-articles?event_type.type=Exhibition&_sort=date:desc&_limit=1').pipe(
+    return this.api.get<Article[]>(environment.cmsUrl, 'event-articles?event_type.type=Exhibition&event_type.type=Book&_sort=date:desc&_limit=1').pipe(
       map(articles => articles[0])
     );
   }
@@ -39,16 +44,22 @@ export class CmsService {
     );
   }
 
-  public getEssays(): Observable<Article[]>{
-    return this.api.get<Article[]>(environment.cmsUrl, 'event-articles?event_type.type=Essay').pipe(
-      map(articles => this.sortByDate(articles))
-    );
+  public getEssays(): Observable<{essaysList: Article[], essayPageStaticContent: Page }> {
+    return forkJoin({
+      essaysList: this.api.get<Article[]>(environment.cmsUrl, 'event-articles?event_type.type=Essay').pipe(
+        map(articles => this.sortByDate(articles))
+      ),
+      essayPageStaticContent:   this.api.get<any>(environment.cmsUrl, 'essays-page')
+    });
   }
 
-  public getTeaching(): Observable<Article[]>{
-    return this.api.get<Article[]>(environment.cmsUrl, 'event-articles?event_type.type=Teaching').pipe(
-      map(articles => this.sortByDate(articles))
-    );
+  public getTeaching(): Observable<{teachingList: Article[], teachingPageStaticContent: Page }> {
+    return forkJoin({
+      teachingList : this.api.get<Article[]>(environment.cmsUrl, 'event-articles?event_type.type=Teaching').pipe(
+        map(articles => this.sortByDate(articles))
+      ),
+      teachingPageStaticContent:   this.api.get<any>(environment.cmsUrl, 'teaching-page')
+    });
   }
 
   public getTalks(): Observable<Article[]>{

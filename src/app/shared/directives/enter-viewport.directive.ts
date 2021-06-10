@@ -1,15 +1,15 @@
-import { AfterViewInit, Directive, ElementRef, EventEmitter,
+import { AfterContentInit, Directive, ElementRef, EventEmitter,
   HostBinding, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
   selector: '[flaviaEnterViewport]'
 })
-export class EnterViewportDirective  implements OnDestroy, OnInit, AfterViewInit {
+export class EnterViewportDirective  implements OnDestroy, OnInit, AfterContentInit {
   @Input() threshold = 0;
 
   @Output() visible = new EventEmitter<HTMLElement>();
-  @HostBinding('class') elementVisibilityClass: string;
+  @HostBinding('class') elementVisibilityClass = '';
   private observer: IntersectionObserver | undefined;
 
 
@@ -21,7 +21,7 @@ export class EnterViewportDirective  implements OnDestroy, OnInit, AfterViewInit
     }
   }
 
-  ngAfterViewInit(): void {
+  ngAfterContentInit(): void {
     this.startObservingElements();
   }
 

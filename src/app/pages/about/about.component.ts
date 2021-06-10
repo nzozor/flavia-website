@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CmsService } from 'src/app/shared/services/cms.service';
 
 export interface AboutPageAssets {
   title: string;
-  description: string;
-  quoteText: string;
+  intro: string;
   imageLargeScreen: { url: string};
   imageSmallScreen: { url: string };
 }
@@ -12,7 +11,8 @@ export interface AboutPageAssets {
 @Component({
   selector: 'flavia-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AboutComponent implements OnInit {
 
