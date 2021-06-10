@@ -5,7 +5,7 @@ import { isPlatformBrowser } from '@angular/common';
   selector: 'flavia-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
-})
+}) 
 export class HeaderComponent implements AfterViewInit {
 
   @Input() underline = false;
