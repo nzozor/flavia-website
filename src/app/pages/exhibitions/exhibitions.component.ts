@@ -31,4 +31,8 @@ export class ExhibitionsComponent implements OnInit {
       this.staticContent = data.exhibitionStaticContent;
     });
   }
+
+  public getDate(date: Date): string {
+    return this.cms.getDate(date);
+  }
 }

@@ -24,7 +24,7 @@ export class BooksComponent implements OnInit {
 
     this.cms.getBooks().subscribe(data => {
       this.loading  = false;
-      this.books = [...data, ...data, ...data];
+      this.books = data;
     });
   }
 }

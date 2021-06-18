@@ -75,12 +75,14 @@ export class CmsService {
   }
 
   public getDate(date: Date): string {
+    if(!date) {
+      return '';
+    }
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
       'July', 'August', 'September', 'October', 'November', 'December'
     ];
     const jsDate = new Date(date);
     return `${jsDate.getDay()} ${monthNames[jsDate.getMonth()]} ${jsDate.getFullYear()}`;
-
   }
 
   private sortByDate(articles: Article[]): Article[] {
