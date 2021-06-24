@@ -21,7 +21,9 @@
           <div class="w-full  content-container flex flex-col">
             <div class="flex-grow flex flex-col justify-center">
               <div class="content mb-6">
-                <h2 class="mb-2">{{ article.title }}</h2>
+                <h2 class="mb-2 essay-description" *ngIf="!article.description" [innerHTML]="article.title | MarkdownToHtml"></h2>
+                <h2 class="mb-2 essay-description" *ngIf="article.description" [innerHTML]="article.description | MarkdownToHtml"></h2>
+                
                 <h3 class="mb-2" *ngIf="article.titleSecond">{{ article.titleSecond }}</h3>
                 <h3 class="mb-6" *ngIf="!article.titleSecond">{{ getDate(article.date) }}</h3>
                 <p class="article">

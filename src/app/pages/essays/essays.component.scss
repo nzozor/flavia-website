@@ -16,7 +16,11 @@ section {
     line-height: 1.5rem;
     letter-spacing: .4px;
   }
-
+  h2.essay-description p {
+    @include font-aktiv-regular;
+    font-weight: 400;
+    font-size: 15px;
+  }
 }
 img {
   @include breakpoint-above(md) {

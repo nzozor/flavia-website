@@ -30,28 +30,31 @@ $header-height: 85px;
 
 .enter-view-port {
   opacity: 0;
-  transform: translate3d(0,-30px,0);
-  transition: transform 5s cubic-bezier(.18,1,.21,1),opacity 5s cubic-bezier(.18,1,.21,1);
+  transform: translate3d(0, -30px, 0);
+  transition: transform 5s cubic-bezier(.18, 1, .21, 1), opacity 5s cubic-bezier(.18, 1, .21, 1);
+
   &.visible {
     opacity: 1;
     transform: translateZ(0);
   }
 }
 
-@mixin font-aktiv-regular{
+@mixin font-aktiv-regular {
   font-family: aktiv-grotesk, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
 }
 
-@mixin underline($color, $visible: invisible ) {
+@mixin underline($color, $visible: invisible) {
   position: relative;
-  @if $visible == visible {
+
+  @if $visible==visible {
     &:before {
-      width: 100%!important;
+      width: 100% !important;
     }
   }
+
   &:before {
     content: "";
     position: absolute;
@@ -70,7 +73,13 @@ $header-height: 85px;
     }
   }
 }
-html, body { height: 100%; width: 100%; margin: 0; }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
 
 
 * {
@@ -93,6 +102,7 @@ h2 {
   font-weight: 300;
   letter-spacing: 1px;
   text-transform: uppercase;
+
 }
 
 section {
@@ -100,19 +110,28 @@ section {
     font-size: 25px;
   }
 }
+
+section {
+  .essay-description p {
+    @include font-aktiv-regular;
+    font-size: 15px;
+  }
+}
+
 .page-intro {
   font-size: 18px;
   font-family: ivyjournal, sans-serif;
   line-height: 32px;
 }
+
 .link {
-  @include font-aktiv-regular; 
+  @include font-aktiv-regular;
   font-size: 15px;
   color: black;
 
   a {
-   @include underline(black, visible);
- }
+    @include underline(black, visible);
+  }
 }
 
 p {
@@ -152,4 +171,5 @@ p {
     }
   }
 }
+
 @import './scss/upcoming';

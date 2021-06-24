@@ -19,6 +19,7 @@ export class HomePageComponent implements OnInit {
   loadingAssets  = false;
   assets: HomePageAssets;
   exhibition: Article;
+  isBookArticle = false;
   ngOnInit(): void {
       this.loadAssets();
       this.loadExhibitions();
@@ -43,6 +44,7 @@ export class HomePageComponent implements OnInit {
     this.cms.getLastExhibition().subscribe(data => {
       this.loadingAssets  = false;
       this.exhibition = data;
+      this.isBookArticle = data.event_type?.type  === 'Book' ? true : false;
     });
   }
 }
