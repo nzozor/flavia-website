@@ -4,7 +4,7 @@
   
     <span> <a href="#"><img src="../assets/Flavia-Logo.svg" alt="Flavia Frigeri" class="flavia-logo"></a> </span>
   
-    <nav class="flex-row space-x-6 hidden lg:flex" >
+    <nav class="flex-row space-x-6 hidden lg:flex">
       <a [routerLink]="['/home']">Home</a>
       <a [routerLink]="['/about']">About</a>
       <a [routerLink]="['/exhibitions']">Exhibitions</a>
@@ -16,7 +16,7 @@
     </nav>
 
     <div class="menu-icon lg:hidden"  (click)="toggleMenu()" >
-      <input class="menu-icon__cheeckbox" type="checkbox" />
+      <input class="menu-icon__cheeckbox" type="checkbox" #cmp />
       <div>
         <span></span>
         <span></span>
@@ -25,10 +25,10 @@
 
     <div class="nav" [class.nav-active]="isMobileMenuActive" >
       <div class="nav__content">
-        <ul class="nav__list flex flex-col laptop:flex-row " (click)="toggleMenu()">
+        <ul class="nav__list flex flex-col laptop:flex-row " (click)="clickMobileMenu()">
           <li class="nav__list-item"><a [routerLink]="['/home']">Home</a></li>
-          <li class="nav__list-item"><a [routerLink]="['/about']" href="#">About</a></li>
-          <li class="nav__list-item"><a [routerLink]="['/exhibitions']" href="#">Exhibitions</a></li>
+          <li class="nav__list-item" ><a [routerLink]="['/about']">About</a></li>
+          <li class="nav__list-item"><a [routerLink]="['/exhibitions']" >Exhibitions</a></li>
           <li class="nav__list-item"><a [routerLink]="['/books']">Books</a></li>
           <li class="nav__list-item"><a [routerLink]="['/essays']">Essays</a></li>
           <li class="nav__list-item"> <a [routerLink]="['/teaching']">Teaching</a></li>

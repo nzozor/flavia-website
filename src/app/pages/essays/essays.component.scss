@@ -10,6 +10,10 @@ h2,h3 {
     }
 }
 
+.page-intro {
+  margin-top: -6px;
+}
+
 section {
   p {
     @include font-aktiv-regular;

@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, HostListener, Inject, Input, PLATFORM_ID,  } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, Inject, Input, PLATFORM_ID, ViewChild,  } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { CmsService } from '../shared/services/cms.service';
 
 @Component({
   selector: 'flavia-header',
@@ -10,12 +11,20 @@ export class HeaderComponent implements AfterViewInit {
 
   @Input() underline = false;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: {}) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: {}, private cmsService: CmsService) {}
 
   header: any;
   sticky: any;
   tempPageYOffset: any;
-  isMobileMenuActive = false;
+  @ViewChild('cmp') cmp: ElementRef;
+
+  get isMobileMenuActive(): boolean {
+    return this.cmsService.isMobileMenuActive;
+  }
+  set isMobileMenuActive(status: boolean) {
+    this.cmsService.isMobileMenuActive = status;
+  }
+
   @HostListener('window:scroll', ['$event'])
 
   private onWindowScroll(event: any): void {
@@ -48,6 +57,11 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   public toggleMenu(): void {
+    this.isMobileMenuActive = !this.isMobileMenuActive;
+  }
+
+  public clickMobileMenu(): void {
+    this.cmp.nativeElement.click();
     this.isMobileMenuActive = !this.isMobileMenuActive;
   }
 }

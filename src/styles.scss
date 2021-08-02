@@ -112,9 +112,11 @@ section {
 }
 
 section {
-  .essay-description p {
-    @include font-aktiv-regular;
-    font-size: 15px;
+  .essay-description, .talk-description {
+    p {
+      @include font-aktiv-regular;
+      font-size: 15px;
+    }
   }
 }
 

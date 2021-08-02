@@ -14,6 +14,8 @@ import { Page } from '../models/page.model';
 })
 export class CmsService {
   public cmsUrl = environment.cmsUrl;
+  public   isMobileMenuActive = false;
+
   constructor(private api: ApiService) {
    }
 

@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { CmsService } from './shared/services/cms.service';
 
 @Component({
   selector: 'flavia-root',
@@ -12,7 +13,7 @@ export class AppComponent implements OnDestroy {
   public title = 'flavia-website';
   public routerSub: Subscription;
   public isUnderline = true;
-  constructor(private router: Router) {
+  constructor(private router: Router, private cmsService: CmsService) {
     this.routerSub = this.router.events.subscribe(
       (event) => {
         if (event instanceof NavigationEnd) {
@@ -21,6 +22,7 @@ export class AppComponent implements OnDestroy {
           } else {
             this.isUnderline = true;
           }
+          this.cmsService.isMobileMenuActive = false;
         }
       });
   }
