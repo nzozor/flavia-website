@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './components/loader/loader.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import {MarkdownToHtmlModule} from 'markdown-to-html-pipe';
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {MarkdownToHtmlModule} from 'markdown-to-html-pipe';
     MarkdownToHtmlModule,
     HttpClientModule,
     AppRoutingModule,
+    NgxUsefulSwiperModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

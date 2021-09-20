@@ -31,8 +31,11 @@
     "@nguniversal/express-engine": "11.2.1",
     "autoprefixer": "^10.2.5",
     "express": "^4.15.2",
+    "ngx-swiper-wrapper": "^10.0.0",
+    "ngx-useful-swiper": "^10.0.1",
     "postcss": "^8.2.10",
     "rxjs": "~6.6.0",
+    "swiper": "^6.6.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },

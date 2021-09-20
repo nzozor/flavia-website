@@ -5,7 +5,7 @@
 .flavia-main-picture {
   margin-top: 84px;
 }
-.main-tile{
+.main-tile {
   .book-article {
     background-color: #f4f4f4;
     text-align: center;
@@ -17,3 +17,109 @@
     }
   }
 }
+
+// .slider-pagination {
+//   bottom: 6.25%;
+//   left: 0;
+//   pointer-events: none;
+//   position: absolute;
+//   text-align: center;
+//   width: 100%;
+
+//   >* {
+//     border-radius: 50%;
+//     box-shadow: 0 0 0 2px rgba(white, 0.75);
+//     display: inline-block;
+//     height: 6px;
+//     margin-left: 4px;
+//     margin-right: 4px;
+//     transition: background-color 250ms;
+//     width: 6px;
+
+//     &.is-active {
+//       background-color: rgba(white, 0.75);
+//     }
+//   }
+// }
+
+// #carousel {
+//   display: flex;
+//   width: 100%;
+//   justify-content: center;
+//   @include breakpoint-less(md) {
+//     margin: 0 20px;
+//   }
+
+//   swiper {
+//     margin-right: 0;
+//     width: 80%;
+
+//     @include breakpoint-above(md) {
+//       margin: 0 30px;
+//     }
+//     @include breakpoint-less(sm) {
+//       min-height: 280px;
+//     }
+
+//     ::ng-deep {
+//       .swiper-pagination {
+//         @include breakpoint-less(sm) {
+//           bottom: -7px;
+//         }
+//         .swiper-pagination-bullet-active {
+//           opacity: 1;
+//           background: black !important;
+//         }
+//         .swiper-pagination-bullet {
+//           width: 5px;
+//           height: 5px;
+//           margin: 0 13px;
+//         }
+//       }
+
+//       .swiper-slide {
+//         width: 100% !important;
+//         padding-bottom: 30px;
+//       }
+
+//       .carousel-cells {
+//         width: 100% !important;
+//       }
+
+//       .carousel-dots {
+//         bottom: -40px;
+//         display: flex;
+//         justify-content: center;
+//         max-width: 1140px;
+
+//         .carousel-dot-active {
+//           background-color: black !important;
+//         }
+
+//         ::ng-deep .carousel-dot {
+//           border: none;
+//           background-color: #bababa;
+//           border-radius: 100px;
+//           display: inline-block;
+//           height: 6px;
+//           margin: 10px;
+//           width: 6px;
+//         }
+//       }
+
+//       .carousel-arrows {
+//         .carousel-arrow {
+//           background-color: transparent;
+//           box-shadow: none;
+//           cursor: pointer;
+//           height: 40px;
+//           margin-top: -20px;
+//           position: absolute;
+//           top: 50%;
+//           width: 40px;
+//           z-index: 10;
+//         }
+//       }
+//     }
+//   }
+// }
